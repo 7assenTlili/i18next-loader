@@ -8,7 +8,7 @@
 this is a webpack loader that can translate your code and generate bundle per each language
 ### installation:
   ```bash
-  npm install --save-dev i18next-loader
+  npm install --save-dev i18next-seperated-bundle-loader
   ```
 ### usage with CRA:
 1. install `i18next`: `npm install --save i18next`
