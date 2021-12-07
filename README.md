@@ -10,11 +10,11 @@ this is a webpack loader that can translate your code and generate bundle per ea
   ```bash
   npm install --save-dev i18next-loader
   ```
-### usage:
-1. install `i18next1`: `npm install --save-dev i18next`
+### usage with CRA:
+1. install `i18next`: `npm install --save i18next`
 2. call `i18next.init({})` in the begining of your `webpack.config.js`:
   ```js
-  var i18next = require('i18next');
+  const i18next = require('i18next');
 
   i18next.init({
     lng: 'pl',
@@ -35,15 +35,10 @@ this is a webpack loader that can translate your code and generate bundle per ea
   });
   ```
 3. Use loader in your application:
-  * using `require`:
-  ```js
-  var exportsOfFile = require("i18next!./file.js");
-  ```
-  * using webpack config:
   ```js
   {
       test: /\.(js|jsx)$/,
-      loader: 'i18next-loader!react-hot!babel-loader'
+      loader: 'i18next-loader'
   }
   ```
 4. Then you can use translate function, e.g:
@@ -55,6 +50,21 @@ this is a webpack loader that can translate your code and generate bundle per ea
   __('item', {count: 1})  // 'element'
   __('item', {count: 99})  // 'elementów'
   ```
+5. inside your react component:
+
+```js
+
+import { useTranslation } from "react-i18next";
+
+function App() {
+  const { t: __ } = useTranslation();
+
+  return <h2>{__('Hello World!')}</h2>;
+}
+
+export default App;
+
+```
 
 ### query params:
 - `funcName`: change default function name (default is `__()`)

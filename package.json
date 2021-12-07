@@ -1,6 +1,6 @@
 {
-  "name": "i18next-loader",
-  "version": "0.0.6",
+  "name": "i18next-seperated-bundle-loader",
+  "version": "1.0.0",
   "description": "i18next loader module for webpack",
   "main": "index.js",
   "scripts": {
@@ -20,12 +20,14 @@
     "webpack",
     "loader"
   ],
-  "author": "Kamil Głód @kglod",
+  "author": "Hassen TLILI",
   "license": "MIT",
   "dependencies": {
     "cli-color": "^1.1.0",
-    "i18next": "^2.3.4",
     "loader-utils": "^0.2.11"
+  },
+  "peerDependencies": {
+    "i18next": "^2.3.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
